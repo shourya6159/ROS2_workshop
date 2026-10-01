@@ -1,56 +1,49 @@
-ROS 2 Workspace Setup Guide
+# ROS 2 Workspace Setup Guide
 
-This guide outlines the standard sequence of commands to create a ROS 2 workspace, build it, and generate your first Python package.
+This guide outlines the standard sequence of commands to create a ROS 2 workspace, build it, and generate your first Python package. 
 
-Prerequisites
-
+## Prerequisites
 Before doing anything with ROS 2, ensure your main installation is sourced in your terminal:
-
+```bash
 source /opt/ros/humble/setup.bash
+```
+*(Note: Replace `humble` with your specific ROS 2 distribution if necessary).*
 
-
-(Note: Replace humble with your specific ROS 2 distribution if necessary).
-
-1. Create the Workspace
-
-First, create the workspace directory and its src folder, then navigate into the root of the workspace.
-
+## 1. Create the Workspace
+First, create the workspace directory and its `src` folder, then navigate into the root of the workspace.
+```bash
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws
+```
 
-
-2. Initial Build
-
-Even though the workspace is empty, it's good practice to build it once to generate the standard build, install, and log directories.
-
+## 2. Initial Build
+Even though the workspace is empty, it's good practice to build it once to generate the standard `build`, `install`, and `log` directories.
+```bash
 colcon build
+```
 
-
-3. Source the Workspace
-
+## 3. Source the Workspace
 After building, source your new workspace's overlay so your terminal recognizes it.
-
+```bash
 source install/setup.bash
+```
 
-
-4. Create a New Package
-
-Navigate into the src directory to create new packages. Here, we create a Python package named my_py_pkg with a dependency on rclpy.
-
+## 4. Create a New Package
+Navigate into the `src` directory to create new packages. Here, we create a Python package named `my_py_pkg` with a dependency on `rclpy`.
+```bash
 cd ~/ros2_ws/src
 ros2 pkg create --build-type ament_python my_py_pkg --dependencies rclpy
+```
 
-
-5. Build the New Package
-
-Go back to the root of your workspace to build. You can build the entire workspace with colcon build, or build just your specific package using the --packages-select flag.
-
+## 5. Build the New Package
+Go back to the root of your workspace to build. You can build the entire workspace with `colcon build`, or build just your specific package using the `--packages-select` flag.
+```bash
 cd ~/ros2_ws
 colcon build --packages-select my_py_pkg
+```
 
-
-6. Source the Updated Workspace
-
+## 6. Source the Updated Workspace
 Whenever you build new packages or executables, you must source the workspace again so ROS 2 can find them.
-
+```bash
 source install/setup.bash
+```
