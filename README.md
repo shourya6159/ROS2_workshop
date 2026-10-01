@@ -39,3 +39,18 @@ Whenever you build new packages or executables, you must source the workspace ag
 ```bash
 source install/setup.bash
 ```
+
+## 7. Run the launch file
+```bash
+ros2 launch starter_package system_bringup.launch.py
+```
+
+## 8. Create new terminal
+
+
+## 9. Run the teleop keyboard:
+```bash
+source /opt/ros/humble/setup.bash
+sudo apt install ros-humble-teleop-twist-keyboard
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
