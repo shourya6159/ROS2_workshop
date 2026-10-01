@@ -35,13 +35,17 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 ## PHASE 2
 ## OPEN CV
+Open a new terminal and:
 ## 1. Install required dependencies
 ```bash
 sudo apt update
 sudo apt install ros-humble-cv-bridge python3-opencv
 ```
 
-## 2. Open a new terminal
+## 2. Install Pyzbar
+```bash
+sudo apt install libzbar0 python3-pyzbar
+```
 ## 3. Run the QR scanner script
 ```bash
 source /opt/ros/humble/setup.bash
