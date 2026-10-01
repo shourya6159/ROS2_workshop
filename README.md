@@ -2,17 +2,9 @@
 
 This guide outlines the standard sequence of commands to create a ROS 2 workspace, build it, and generate your first Python package. 
 
-## Prerequisites
-Before doing anything with ROS 2, ensure your main installation is sourced in your terminal:
-```bash
-source /opt/ros/humble/setup.bash
-```
-*(Note: Replace `humble` with your specific ROS 2 distribution if necessary).*
-
-## 1. Create the Workspace
+## 1. Navigate to the Workspace
 First, create the workspace directory and its `src` folder, then navigate into the root of the workspace.
 ```bash
-mkdir -p ~/ROS2_workshop/src
 cd ~/ROS2_workshop
 ```
 
