@@ -40,13 +40,94 @@
     </model>
     <model name="warehouse_walls">
       <static>true</static>
-      <link name="outer_west"><pose>-6.5 0 0.5 0 0 0</pose><collision name="col"><geometry><box><size>0.2 8.2 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>0.2 8.2 1</size></box></geometry><material><ambient>0.2 0.2 0.3 1</ambient></material></visual></link>
-      <link name="outer_north"><pose>-3.5 4 0.5 0 0 0</pose><collision name="col"><geometry><box><size>6.2 0.2 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>6.2 0.2 1</size></box></geometry><material><ambient>0.2 0.2 0.3 1</ambient></material></visual></link>
-      <link name="outer_south"><pose>-3.5 -4 0.5 0 0 0</pose><collision name="col"><geometry><box><size>6.2 0.2 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>6.2 0.2 1</size></box></geometry><material><ambient>0.2 0.2 0.3 1</ambient></material></visual></link>
-      <link name="east_room_b"><pose>-0.5 2.5 0.5 0 0 0</pose><collision name="col"><geometry><box><size>0.2 3.2 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>0.2 3.2 1</size></box></geometry><material><ambient>0.2 0.2 0.3 1</ambient></material></visual></link>
-      <link name="east_room_c"><pose>-0.5 -2.5 0.5 0 0 0</pose><collision name="col"><geometry><box><size>0.2 3.2 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>0.2 3.2 1</size></box></geometry><material><ambient>0.2 0.2 0.3 1</ambient></material></visual></link>
-      <link name="entrance_top_lip"><pose>-0.5 0.7 0.5 0 0 0</pose><collision name="col"><geometry><box><size>0.2 0.6 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>0.2 0.6 1</size></box></geometry><material><ambient>0.9 0.1 0.1 1</ambient></material></visual></link>
-      <link name="entrance_bottom_lip"><pose>-0.5 -0.7 0.5 0 0 0</pose><collision name="col"><geometry><box><size>0.2 0.6 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>0.2 0.6 1</size></box></geometry><material><ambient>0.9 0.1 0.1 1</ambient></material></visual></link>
+<link name="outer_west">
+        <pose>-6.5 0 0.5 0 0 0</pose>
+        <collision name="col"><geometry><box><size>0.2 8.2 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>0.2 8.2 1</size></box></geometry>
+          <material><ambient>0.2 0.2 0.3 1</ambient></material>
+        </visual>
+        <!-- Faces +X (Inside) -->
+        <visual name="qr_code_visual_outer_west">
+          <pose>0.105 0 0 0 0 0</pose>
+          <geometry><box><size>0.005 0.4 0.4</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse>
+            <pbr><metal><albedo_map>spotify_qr.png</albedo_map></metal></pbr>
+          </material>
+        </visual>
+      </link>
+
+      <link name="outer_north">
+        <pose>-3.5 4 0.5 0 0 0</pose>
+        <collision name="col"><geometry><box><size>6.2 0.2 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>6.2 0.2 1</size></box></geometry>
+          <material><ambient>0.2 0.2 0.3 1</ambient></material>
+        </visual>
+        <!-- Faces -Y (Inside) -->
+      
+      </link>
+
+      <link name="outer_south">
+        <pose>-3.5 -4 0.5 0 0 0</pose>
+        <collision name="col"><geometry><box><size>6.2 0.2 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>6.2 0.2 1</size></box></geometry>
+          <material><ambient>0.2 0.2 0.3 1</ambient></material>
+        </visual>
+        <!-- Faces +Y (Inside) -->
+        
+      </link>
+
+      <link name="east_room_b">
+        <pose>-0.5 2.5 0.5 0 0 0</pose>
+        <collision name="col"><geometry><box><size>0.2 3.2 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>0.2 3.2 1</size></box></geometry>
+          <material><ambient>0.2 0.2 0.3 1</ambient></material>
+        </visual>
+        <!-- Faces -X (Inside main room) -->
+        
+      </link>
+
+      <link name="east_room_c">
+        <pose>-0.5 -2.5 0.5 0 0 0</pose>
+        <collision name="col"><geometry><box><size>0.2 3.2 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>0.2 3.2 1</size></box></geometry>
+          <material><ambient>0.2 0.2 0.3 1</ambient></material>
+        </visual>
+        <!-- Faces -X (Inside main room) -->
+        
+      </link>
+
+      <link name="entrance_top_lip">
+        <pose>-0.5 0.7 0.5 0 0 0</pose>
+        <collision name="col"><geometry><box><size>0.2 0.6 1</size></box></geometry></collision>
+        <visual name="vis">
+          <geometry><box><size>0.2 0.6 1</size></box></geometry>
+          <material><ambient>0.9 0.1 0.1 1</ambient></material>
+        </visual>
+        <!-- Faces -X (Inside main room) -->
+       
+      </link>
+      
+      <!-- Modified Entrance Bottom Lip -->
+      <link name="entrance_bottom_lip">
+        <pose>-0.5 -0.7 0.5 0 0 0</pose>
+        <collision name="col">
+          <geometry><box><size>0.2 0.6 1</size></box></geometry>
+        </collision>
+        <visual name="vis">
+          <geometry><box><size>0.2 0.6 1</size></box></geometry>
+          <material><ambient>0.9 0.1 0.1 1</ambient></material>
+        </visual>
+        
+   
+       
+      </link>
+
       <link name="divider_room_a_b"><pose>-3.5 2.5 0.5 0 0 0</pose><collision name="col"><geometry><box><size>0.2 3 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>0.2 3 1</size></box></geometry><material><ambient>0.1 0.6 0.1 1</ambient></material></visual></link>
       <link name="c_north_seg1"><pose>-5.95 1 0.5 0 0 0</pose><collision name="col"><geometry><box><size>1.1 0.2 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>1.1 0.2 1</size></box></geometry><material><ambient>0.1 0.1 0.7 1</ambient></material></visual></link>
       <link name="c_north_seg2"><pose>-4.05 1 0.5 0 0 0</pose><collision name="col"><geometry><box><size>1.1 0.2 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>1.1 0.2 1</size></box></geometry><material><ambient>0.1 0.1 0.7 1</ambient></material></visual></link>
@@ -55,6 +136,7 @@
       <link name="c_south_seg1"><pose>-5.2 -1 0.5 0 0 0</pose><collision name="col"><geometry><box><size>2.6 0.2 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>2.6 0.2 1</size></box></geometry><material><ambient>0.1 0.1 0.7 1</ambient></material></visual></link>
       <link name="c_south_seg2"><pose>-1.8 -1 0.5 0 0 0</pose><collision name="col"><geometry><box><size>2.6 0.2 1</size></box></geometry></collision><visual name="vis"><geometry><box><size>2.6 0.2 1</size></box></geometry><material><ambient>0.1 0.1 0.7 1</ambient></material></visual></link>
     </model>
+    
     <model name="sph-1">
       <pose>-5.19814 2.99701 0.2 0 0 0</pose>
       <link name="link">
@@ -63,7 +145,7 @@
           <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material>
         </visual>
         <collision name="c">
-          <geometry><sphere><radius>0.2</radius></sphere>></geometry>
+          <geometry><sphere><radius>0.2</radius></sphere></geometry>
         </collision>
       </link>
     </model>
