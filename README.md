@@ -12,8 +12,8 @@ source /opt/ros/humble/setup.bash
 ## 1. Create the Workspace
 First, create the workspace directory and its `src` folder, then navigate into the root of the workspace.
 ```bash
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws
+mkdir -p ~/ROS2_workshop/src
+cd ~/ROS2_workshop
 ```
 
 ## 2. Initial Build
@@ -31,15 +31,15 @@ source install/setup.bash
 ## 4. Create a New Package
 Navigate into the `src` directory to create new packages. Here, we create a Python package named `my_py_pkg` with a dependency on `rclpy`.
 ```bash
-cd ~/ros2_ws/src
+cd ~/ROS2_workshop/src
 ros2 pkg create --build-type ament_python my_py_pkg --dependencies rclpy
 ```
 
 ## 5. Build the New Package
 Go back to the root of your workspace to build. You can build the entire workspace with `colcon build`, or build just your specific package using the `--packages-select` flag.
 ```bash
-cd ~/ros2_ws
-colcon build --packages-select my_py_pkg
+cd ~/ROS2_workshop
+colcon build
 ```
 
 ## 6. Source the Updated Workspace
