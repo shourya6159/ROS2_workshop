@@ -3,7 +3,12 @@
 This guide outlines the standard sequence of commands to create a ROS 2 workspace, build it, and generate your first Python package. 
 
 ## 1. Navigate to the Workspace
-First, create the workspace directory and its `src` folder, then navigate into the root of the workspace.
+First, create the workspace directory.
+```bash
+mkdir ROS2_workshop
+```
+Move the contents of this repo into the ROS2_workshop directory
+Then run:
 ```bash
 cd ~/ROS2_workshop
 ```
