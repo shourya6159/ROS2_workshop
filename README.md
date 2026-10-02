@@ -13,21 +13,27 @@ cd ~/ROS2_workshop
 colcon build
 ```
 
-## 3. Source the Workspace
+## 3. Install XACRO
+```bash
+sudo apt update
+sudo apt install ros-$ROS_DISTRO-xacro
+```
+
+## 4. Source the Workspace
 Whenever you build new packages or executables, you must source the workspace so ROS 2 can find them.
 ```bash
 source install/setup.bash
 ```
 
-## 4. Run the launch file
+## 5. Run the launch file
 ```bash
 ros2 launch starter_package system_bringup.launch.py
 ```
 
-## 5. Create new terminal
+## 6. Create new terminal
 
 
-## 6. Run the teleop keyboard:
+## 7. Run the teleop keyboard:
 ```bash
 source /opt/ros/humble/setup.bash
 sudo apt install ros-humble-teleop-twist-keyboard
