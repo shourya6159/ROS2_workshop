@@ -30,7 +30,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'starter_node = starter_package.starter_node:main',
+            'velocity_publisher = starter_package.velocity_publisher:main',
+            'qr_scanner = starter_package.qr_scanner:main',
         ],
     },
 )
