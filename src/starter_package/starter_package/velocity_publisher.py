@@ -5,12 +5,12 @@ from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
 
-class Starter_Node(Node):
+class Velocity_Publisher(Node):
 
     def __init__(self)->None:
-        super().__init__("starter_node")
+        super().__init__("velocity_publisher")
 
-        self.velocity_publisher = self.create_publisher(
+        self.publisher = self.create_publisher(
             Twist,
             "/cmd_vel",
             10,
@@ -27,19 +27,19 @@ class Starter_Node(Node):
         msg.angular.y = 0.0
         msg.angular.z = angular_vel
 
-        self.velocity_publisher.publish(msg)
+        self.publisher.publish(msg)
 
 def main(args=None)->None:
     rclpy.init(args=args)
 
-    starter_node = Starter_Node()
+    velocity_publisher = Velocity_Publisher()
 
     try:
-        rclpy.spin(starter_node)
+        rclpy.spin(velocity_publisher)
     except KeyboardInterrupt:
         pass
     finally:
-        if starter_node: starter_node.destroy_node()
+        if velocity_publisher: velocity_publisher.destroy_node()
 
     rclpy.shutdown()
 
