@@ -54,7 +54,7 @@ sudo apt install libzbar0 python3-pyzbar
 ```
 ## 3. Run the QR scanner script
 ```bash
-source /opt/ros/humble/setup.bash
 cd ~/ROS2_workshop
-ros2 run qr_scanner
+source install/setup.bash
+ros2 run starter_package qr_scanner
 ```
